@@ -178,3 +178,4 @@ function system_form_install_configure_form_alter(&$form, $form_state) {
 function orgright_client_install_configure_form_submit(&$form, &$form_state) {
   variable_set('orgright_client_force_login', $form_state['values']['user_force_login']);
 }
+
