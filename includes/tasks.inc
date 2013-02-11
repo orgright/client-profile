@@ -28,14 +28,16 @@ function orgright_client_process_tasks(&$task, $url) {
   $output = '';
   // Complete basic configuration then skip to the configure task
   if ($task == 'profile') {
-    $output .= orgright_client_profile_task_profile($url);
+    //$output .= orgright_client_profile_task_profile($url);
     $task = 'configure-theme';
   }
 
   // If we're using Drush to install, skip the following forms
   if (defined('DRUSH_BASE_PATH')) {
     orgright_client_include('drush');
-    orgright_client_drush_tasks($task);
+    $task = orgright_client_drush_tasks($task);
+    // Retrieve the task
+    //$task = variable_get('install_task', '');
   }
 
   // Provide a form to choose the theme
@@ -58,6 +60,7 @@ function orgright_client_process_tasks(&$task, $url) {
     $operations = array();
 
     // Pre-installation operations
+    $operations[] = array('orgright_client_default_node_types', array());
     $operations[] = array('orgright_client_build_directories', array());
     $operations[] = array('orgright_client_config_taxonomy', array());
 
@@ -114,6 +117,15 @@ function orgright_client_process_tasks(&$task, $url) {
  * @return string
  */
 function orgright_client_profile_task_profile($url) {
+
+
+  return st('Standard site configuration completed');
+}
+
+/*
+ * Install the default node types: Page and Story
+ */
+function orgright_client_default_node_types() {
   // Insert default user-defined node types into the database.
   $types = array(
     array(
@@ -159,8 +171,6 @@ function orgright_client_profile_task_profile($url) {
 
   // Update the menu router information.
   menu_rebuild();
-
-  return st('Standard site configuration completed');
 }
 
 /**

@@ -30,6 +30,7 @@ function orgright_client_drush_tasks(&$task) {
     // submit function will set task to 'configure-features'
   }
 
+  $task = variable_get('install_task', '');
   if ($task == 'configure-features') {
     // nothing to do, so move onto next step
     $task = 'install-orgright-client';
@@ -37,4 +38,5 @@ function orgright_client_drush_tasks(&$task) {
 
   // Have skipped the forms, so continue with the installation
   variable_set('install_task', $task);
+  return $task;
 }
