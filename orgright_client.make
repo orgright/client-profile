@@ -9,8 +9,6 @@ projects[advanced_help] = "1.2"
 projects[backup_migrate] = "2.6"
 projects[cck] = "2.9"
 projects[date] = "2.9"
-projects[devel] = "1.27"
-projects[feedback] = "2.2"
 projects[install_profile_api] = "2.2"
 projects[jquery_ui] = "1.5"
 projects[jquery_update] = "2.0-alpha1"
@@ -37,3 +35,9 @@ projects[zen] = "2.1"
 projects[org_themes][type] = "theme"
 projects[org_themes][download][type] = "get"
 projects[org_themes][download][url] = "https://github.com/orgright/custom-themes/archive/6.x-2.0.tar.gz"
+
+; External libraries
+libraries[jquery_ui][dowmload][type] = "file"
+libraries[jquery_ui][download][url] = "http://jquery-ui.googlecode.com/files/jquery-ui-1.7.3.zip"
+libraries[jquery_ui][directory_name] = "jquery.ui"
+

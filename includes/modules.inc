@@ -51,12 +51,6 @@ function orgright_client_specified_modules() {
     // Views
     'views',
     'views_ui',
-    // Other
-    'advanced_help',
-    'admin_menu',
-    'backup_migrate',
-    'feedback',
-    'install_profile_api',
     // orgRight
     'orgright',
     'membership',
@@ -67,5 +61,12 @@ function orgright_client_specified_modules() {
     'helpservice',
     'mailhandler',
     'maillist',
+    // Other
+    'memcache',
+    'advanced_help',
+    'admin_menu',
+    'install_profile_api',
+    'backup_migrate',
+    //'feedback',
   );
 }
