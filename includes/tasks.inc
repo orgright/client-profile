@@ -69,6 +69,7 @@ function orgright_client_process_tasks(&$task, $url) {
     $operations[] = array('orgright_client_config_menus', array());
     $operations[] = array('orgright_client_config_backup_migrate', array());
     $operations[] = array('orgright_client_config_filters', array());
+    $operations[] = array('orgright_client_config_print', array());
     //$operations[] = array('orgright_client_config_password', array());
     //$operations[] = array('orgright_client_config_wysiwyg', array());
     //$operations[] = array('orgright_client_config_ur', array());
@@ -392,6 +393,20 @@ function orgright_client_config_filters() {
   db_query("UPDATE {filters} SET weight = -7 WHERE module = 'filter' AND delta = 3");
    *******/
 
+}
+
+/**
+ * Configure the file and directory permsissions for print module
+ */
+function orgright_client_config_print() {
+  // need to give apache write permission in the dompdf library "lib/fonts" directory
+  $path = drupal_get_path('module', 'print') . '/lib/dompdf/lib/fonts';
+  if (file_exists($path) && chgrp($path, 'apache')) {
+    $files = scandir($path);
+    foreach ($files as $file) {
+      chgrp($path, 'apache');
+    }
+  }
 }
 
 /**
