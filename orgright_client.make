@@ -40,6 +40,6 @@ projects[org_themes][download][url] = "https://github.com/orgright/custom-themes
 ;libraries[jquery_ui][dowmload][type] = "file"
 ;libraries[jquery_ui][download][url] = "http://jquery-ui.googlecode.com/files/jquery-ui-1.7.3.zip"
 libraries[jquery_ui][dowmload][type] = "svn"
-libraries[jquery_ui][download][url] = "http://jquert-ui.googlecode.com/svn/tags/1.7.3"
+libraries[jquery_ui][download][url] = "http://jquery-ui.googlecode.com/svn/tags/1.7.3"
 libraries[jquery_ui][destination] = "modules/jquery_ui"
 libraries[jquery_ui][directory_name] = "jquery.ui"
