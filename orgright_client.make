@@ -41,3 +41,8 @@ libraries[jquery.ui][download][type] = "file"
 libraries[jquery.ui][download][url] = "http://jquery-ui.googlecode.com/files/jquery-ui-1.7.3.zip"
 libraries[jquery.ui][destination] = "modules/jquery_ui"
 libraries[jquery.ui][directory_name] = "jquery.ui"
+
+libraries[dompdf][download][type] = "file"
+libraries[dompdf][download][url] = "http://dompdf.googlecode.com/files/dompdf-0.5.2.zip"
+libraries[dompdf][destination] = "modules/print/lib"
+libraries[dompdf][directory_name] = "dompdf"
